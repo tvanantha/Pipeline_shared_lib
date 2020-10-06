@@ -18,3 +18,4 @@ node{
                         filterLogs ('WARNING', 1)
                     }
                 }
+}
