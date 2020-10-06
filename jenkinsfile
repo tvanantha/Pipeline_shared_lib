@@ -1,16 +1,14 @@
 #!/usr/bin/env groovy
 @Library('shared-library@master') _ 
 node{
-
-stages{
               stage('Source') {
-               git 'http://github.com/brentlaster/roarv2'
+               		git 'https://github.com/tvanantha/webapp.git'
                 }
 
               stage('maven build'){
                   steps{
                       script{
-		    	                sh "mvn clean install"
+		    	       sh "mvn clean install"
                       	  }
                	     }  
                  }	
