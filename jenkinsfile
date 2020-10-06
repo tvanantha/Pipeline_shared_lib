@@ -1,0 +1,22 @@
+#!/usr/bin/env groovy
+@Library('shared-library@master') _ 
+node{
+
+stages{
+              stage('Source') {
+               git 'http://github.com/brentlaster/roarv2'
+                }
+
+              stage('maven build'){
+                  steps{
+                      script{
+		    	                sh "mvn clean install"
+                      	  }
+               	     }  
+                 }	
+                 
+                 stage ('Check logs') {
+                    steps {
+                        filterLogs ('WARNING', 1)
+                    }
+                }
