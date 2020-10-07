@@ -6,16 +6,12 @@ node{
                 }
 
               stage('maven build'){
-                  steps{
-                      script{
-		    	       sh "mvn clean install"
+                  withMaven{
+                             sh "mvn clean install"
                       	  }
-               	     }  
-                 }	
+               	      }	
                  
                  stage ('Check logs') {
-                    steps {
-                        filterLogs ('WARNING', 1)
+                       filterLogs ('WARNING', 1)
                     }
-                }
-}
+   }
