@@ -5,7 +5,7 @@ node{
                		git 'https://github.com/tvanantha/webapp.git'
                 }
 
-              stage('maven build'){
+              stage('build'){
                   withMaven{
                              sh "mvn clean install"
                       	  }
