@@ -1,17 +1,16 @@
 #!/usr/bin/env groovy
-@Library('grovvy_shared_library@main') _ 
+@Library('grovvy_shared_library@main')_ 
 node{
               stage('Source') {
                		git 'https://github.com/tvanantha/webapp.git'
                 }
 
               stage('build'){
-                  withMaven{
+                       Maven{
                              sh "mvn clean install"
                       	  }
                	      }	
-                 
-                 stage ('Check logs') {
+               stage ('Check logs') {
                        filterLogs ('WARNING', 1)
                     }
    }
