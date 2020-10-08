@@ -4,7 +4,7 @@ node{
   
    
               stage('Source') {
-                z= new.git_url()
+                z= new git_url()
                 z.checkOutFrom('https://github.com/tvanantha/webapp.git')
                		
               }
