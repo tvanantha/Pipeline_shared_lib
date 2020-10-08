@@ -9,8 +9,7 @@ node{
                		git 'https://github.com/tvanantha/webapp.git'
               }
               stage('Maven build') {
-              rtMaven.tool = "Maven-3.6.3"
-              buildInfo = rtMaven.run pom: 'webapp/pom.xml', goals: 'clean install'
+                  buildInfo = rtMaven.run pom: 'webapp/pom.xml', goals: 'clean install'
        	      }	
                stage ('Check logs') {
                        filterLogs ('WARNING', 1)
