@@ -10,7 +10,8 @@ node{
               }
               stage('Build') {
                 withMaven{
-                  sh "mvn package"
+                    sh "mvn package"
+                }
        	      }	
                stage ('Check logs') {
                        filterLogs ('WARNING', 1)
