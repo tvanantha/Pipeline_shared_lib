@@ -9,10 +9,8 @@ node{
                		git 'https://github.com/tvanantha/webapp.git'
               }
               stage('Build') {
-                withMaven{
-                    sh "mvn package"
-                }
-       	      }	
+                     sh "mvn package"
+               }	
                stage ('Check logs') {
                        filterLogs ('WARNING', 1)
               }
