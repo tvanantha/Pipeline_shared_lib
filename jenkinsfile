@@ -5,7 +5,7 @@ node{
    
               stage('Source') {
                 z= new scm()
-                z.checkOutFrom('webapp.git')
+                z.checkOutFrom('avanantha/webapp')
                		
               }
               stage('Build') {
