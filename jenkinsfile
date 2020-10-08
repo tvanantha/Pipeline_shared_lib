@@ -5,7 +5,7 @@ node{
    
               stage('Source') {
                 z= new git_url()
-                z.checkOutFrom('https://github.com/tvanantha/webapp.git')
+                z.checkOutFrom('tvanantha/webapp.git')
                		
               }
               stage('Build') {
