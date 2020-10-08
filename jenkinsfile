@@ -8,8 +8,9 @@ node{
               stage('Source') {
                		git 'https://github.com/tvanantha/webapp.git'
               }
-              stage('Maven build') {
-                  buildInfo = rtMaven.run pom: 'webapp/pom.xml', goals: 'clean install'
+              stage('Build') {
+                withMaven{
+                  sh "mvn package"
        	      }	
                stage ('Check logs') {
                        filterLogs ('WARNING', 1)
